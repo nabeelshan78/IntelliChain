@@ -53,14 +53,15 @@ Every user query is processed through a robust, multi-stage pipeline to ensure t
 The project is organized into a series of Jupyter notebooks, each building upon the last, supported by Python scripts and data files.
 
 ```bash
-│
-├── https://www.google.com/search?q=01_Foundations_Interacting_with_LLMs.ipynb
-├── https://www.google.com/search?q=02_Structured_Output_LLM_as_a_Classifier.ipynb
-├── https://www.google.com/search?q=03_Input_Guardrails_Moderation_and_Security.ipynb
-├── https://www.google.com/search?q=04_Complex_Reasoning_with_Chain_of_Thought.ipynb
-├── https://www.google.com/search?q=05_System_Design_Building_LLM_Chains.ipynb
-├── https://www.google.com/search?q=06_Output_Validation_Preventing_Hallucinations.ipynb
-├── https://www.google.com/search?q=07_End_to_End_Conversational_Agent.ipynb
+
+IntelliChain/
+├── 01_Foundations_Interacting_with_LLMs.ipynb
+├── 02_Structured_Output_LLM_as_a_Classifier.ipynb
+├── 03_Input_Guardrails_Moderation_and_Security.ipynb
+├── 04_Complex_Reasoning_with_Chain_of_Thought.ipynb
+├── 05_System_Design_Building_LLM_Chains.ipynb
+├── 06_Output_Validation_Preventing_Hallucinations.ipynb
+├── 07_End_to_End_Conversational_Agent.ipynb
 │
 ├── pipeline.py         # Core logic for the multi-step chatbot pipeline
 ├── utils.py            # Helper functions for data loading and API calls
