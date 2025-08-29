@@ -14,7 +14,7 @@ We move beyond basic API calls and dive into the critical components of a produc
 - [The IntelliBot Pipeline](#-the-intellibot-pipeline)
 - [Repository Structure](#-repository-structure)
 - [Technology Stack](#️-technology-stack)
-- [Setup and Installation](#️-setup-and-installation)
+- [Setup and Installation](#setup-and-installation)
 - [How to Use](#-how-to-use)
 - [Notebook Breakdown](#-notebook-breakdown)
   - [1. Foundations: Interacting with LLMs](#1-foundations-interacting-with-llms)
@@ -24,14 +24,13 @@ We move beyond basic API calls and dive into the critical components of a produc
   - [5. System Design: Building LLM Chains](#5-system-design-building-llm-chains)
   - [6. Output Validation: Preventing Hallucinations](#6-output-validation-preventing-hallucinations)
   - [7. End-to-End Conversational Agent](#7-end-to-end-conversational-agent)
-- [Chatbot in Action](#️-chatbot-in-action)
-- [Contributing](#-contributing)
+- [Chatbot in Action](#chatbot-in-action)
 
 ---
 
 ## ✨ Core Concepts
 
-This project is a hands-on tutorial covering the essential techniques for modern LLM application development:
+This project covers techniques for modern LLM application development:
 
 - **Prompt Engineering**: Crafting precise instructions (`system` prompts) to control the LLM's behavior, tone, and output format.
 - **Safety & Security**: Implementing guardrails using moderation APIs and few-shot classification to detect and block harmful content and prompt injection attacks.
@@ -87,7 +86,7 @@ IntelliChain/
 
 ---
 
-## ⚙️ Setup and Installation
+## Setup and Installation
 
 Follow these steps to get the project running on your local machine.
 
@@ -190,12 +189,25 @@ This project is structured as a series of Jupyter notebooks, each building on th
 
 ---
 
-## 🖼️ Chatbot in Action
-Here are some examples of the final chatbot handling various customer queries.
+-----
 
-- Query 1: Comparing Products
-- Query 2: Checking Product Specifications
-- Query 3: Handling Complex Queries
-- Query 4: Specific Feature Questions
+## Chatbot in Action
 
----
+Here are some examples of the final IntelliBot handling various customer queries. Each example demonstrates a different aspect of its capabilities, from product comparisons to complex reasoning and safety features.
+
+### Query 1:
+![Comparing Products](outputs/chatbot_qa_1.png)
+
+### Query 2:
+![Product Specifications](outputs/chatbot_qa_2.png)
+
+### Query 3:
+![Complex Query Handling](outputs/chatbot_qa_3.png)
+
+### Query 4:
+![Specific Feature Questions](outputs/chatbot_qa_4.png)
+
+### Query 5:
+![General Information](outputs/chatbot_qa_5.png)
+
+-----
