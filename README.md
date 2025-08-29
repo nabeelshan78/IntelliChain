@@ -150,7 +150,7 @@ IntelliChain/
 
 ## 🛠️ Technology Stack
 
-- **Language**: Python 3.x
+- **Language**: Python 3.8+
 - **LLM API**: OpenAI (`gpt-4o`)
 - **Core Libraries**:
   - `openai`: For interacting with the OpenAI API.
