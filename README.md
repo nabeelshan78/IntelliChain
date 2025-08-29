@@ -12,10 +12,6 @@ We move beyond basic API calls and dive into the critical components of a produc
 
 - [Core Concepts](#-core-concepts)
 - [The IntelliBot Pipeline](#-the-intellibot-pipeline)
-- [Repository Structure](#-repository-structure)
-- [Technology Stack](#️-technology-stack)
-- [Setup and Installation](#setup-and-installation)
-- [How to Use](#-how-to-use)
 - [Notebook Breakdown](#-notebook-breakdown)
   - [1. Foundations: Interacting with LLMs](#1-foundations-interacting-with-llms)
   - [2. Structured Output: LLM as a Classifier](#2-structured-output-llm-as-a-classifier)
@@ -24,6 +20,10 @@ We move beyond basic API calls and dive into the critical components of a produc
   - [5. System Design: Building LLM Chains](#5-system-design-building-llm-chains)
   - [6. Output Validation: Preventing Hallucinations](#6-output-validation-preventing-hallucinations)
   - [7. End-to-End Conversational Agent](#7-end-to-end-conversational-agent)
+- [Repository Structure](#-repository-structure)
+- [Technology Stack](#️-technology-stack)
+- [Setup and Installation](#setup-and-installation)
+- [How to Use](#-how-to-use)
 - [Chatbot in Action](#chatbot-in-action)
 
 ---
@@ -44,6 +44,80 @@ This project covers techniques for modern LLM application development:
 ## 🔧 The IntelliBot Pipeline
 
 Every user query is processed through a robust, multi-stage pipeline to ensure the final response is safe, accurate, and helpful. This modular design is the cornerstone of building reliable AI systems.
+
+---
+
+## 📘 Notebook Breakdown
+
+This project is structured as a series of Jupyter notebooks, each building on the last to create a complete system.
+
+---
+
+### 1. Foundations: Interacting with LLMs
+- **File**: [`01_Foundations_Interacting_with_LLMs.ipynb`](01_Foundations_Interacting_with_LLMs.ipynb)
+- **Summary**: Covers the fundamentals of the OpenAI Chat Completions API.
+- **Key Techniques**:
+  - Sending basic prompts.
+  - Using `system`, `user`, and `assistant` roles to guide conversations.
+  - Understanding tokenization and its impact on output.
+  - Counting token usage for cost management.
+
+---
+
+### 2. Structured Output: LLM as a Classifier
+- **File**: [`02_Structured_Output_LLM_as_a_Classifier.ipynb`](02_Structured_Output_LLM_as_a_Classifier.ipynb)
+- **Summary**: Uses the LLM to classify customer queries into predefined categories and guarantees a machine-readable output.
+- **Key Techniques**:
+  - **Classification via Prompting**: Providing categories in the `system` prompt.
+  - **Guaranteed JSON Output**: Using `response_format={"type": "json_object"}` to ensure the output is always valid JSON.
+
+---
+
+### 3. Input Guardrails: Moderation & Security
+- **File**: [`03_Input_Guardrails_Moderation_and_Security.ipynb`](03_Input_Guardrails_Moderation_and_Security.ipynb)
+- **Summary**: Implements two layers of security to evaluate user inputs.
+- **Key Techniques**:
+  - **OpenAI Moderation API**: A free, specialized endpoint to detect harmful content.
+  - **Prompt Injection Detection**: Using a few-shot prompted LLM to build a custom classifier that prevents users from overriding system instructions.
+
+---
+
+### 4. Complex Reasoning with Chain-of-Thought
+- **File**: [`04_Complex_Reasoning_with_Chain_of_Thought.ipynb`](04_Complex_Reasoning_with_Chain_of_Thought.ipynb)
+- **Summary**: Improves the LLM's reasoning by instructing it to "think step-by-step."
+- **Key Techniques**:
+  - **Chain-of-Thought (CoT)**: Structuring the prompt to make the model outline its reasoning process before providing a final answer.
+  - **Interpretability**: The model's "inner monologue" is exposed, making it easy to debug its logic.
+
+---
+
+### 5. System Design: Building LLM Chains
+- **File**: [`05_System_Design_Building_LLM_Chains.ipynb`](05_System_Design_Building_LLM_Chains.ipynb)
+- **Summary**: Creates a multi-step pipeline where the output of one LLM call feeds into the next.
+- **Key Techniques**:
+  - **Prompt Chaining**: A 3-step chain:
+    1.  **Extraction**: An LLM extracts product names from the user query into a JSON list.
+    2.  **Retrieval**: Python code fetches product details from a local catalog (`products.json`).
+    3.  **Generation**: A final LLM call synthesizes the retrieved data into a conversational response.
+
+---
+
+### 6. Output Validation: Preventing Hallucinations
+- **File**: [`06_Output_Validation_Preventing_Hallucinations.ipynb`](06_Output_Validation_Preventing_Hallucinations.ipynb)
+- **Summary**: Adds a final, critical evaluation step to ensure the AI's response is safe and factually accurate.
+- **Key Techniques**:
+  - **Output Moderation**: Screening the generated response for harmful content.
+  - **Fact-Checking with an Evaluator LLM**: A second LLM call compares the generated response against the source product data to confirm factual correctness.
+
+---
+
+### 7. End-to-End Conversational Agent
+- **File**: [`07_End_to_End_Conversational_Agent.ipynb`](07_End_to_End_Conversational_Agent.ipynb)
+- **Summary**: Assembles all previous components into a single, cohesive, and interactive chatbot application.
+- **Key Features**:
+  - **Complete AI Pipeline**: Integrates all six preceding concepts into one script (`pipeline.py`).
+  - **Conversation Memory**: Maintains chat history to allow for stateful, multi-turn conversations.
+  - **Interactive Chat UI**: Uses the `panel` library to create a simple graphical interface for real-time interaction.
 
 ---
 
@@ -188,8 +262,6 @@ This project is structured as a series of Jupyter notebooks, each building on th
   - **Interactive Chat UI**: Uses the `panel` library to create a simple graphical interface for real-time interaction.
 
 ---
-
------
 
 ## Chatbot in Action
 
