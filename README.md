@@ -93,8 +93,8 @@ Follow these steps to get the project running on your local machine.
 
 **1. Clone the Repository**
 ```bash
-git clone [https://github.com/your-username/chatbot.git](https://github.com/your-username/chatbot.git)
-cd chatbot
+git clone https://github.com/nabeelshan78/IntelliChain.git
+cd IntelliChain
 ```
 
 **2. Set Up Your API Key**
@@ -115,11 +115,6 @@ Work through the notebooks `01` to `06` in order. Each notebook is self-containe
 
 **2. Run the Final Chatbot**
 The final, interactive chatbot can be launched by running the `07_End_to_End_Conversational_Agent.ipynb` notebook. The last cells use the `panel` library to create and display a chat interface directly in the notebook or as a separate web application.
-
-To run as a web app, you might use a command like:
-```bash
-panel serve 07_End_to_End_Conversational_Agent.ipynb
-```
 
 ## 📘 Notebook Breakdown
 
